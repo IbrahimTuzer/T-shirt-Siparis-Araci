@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kişiye Özel Tişört Sipariş Aracı</title>
+</head>
+<body>
+     <h1>Kişiye Özel Tişört Sipariş Aracı</h1>
+  <form id="siparisFormu">
+    <h2>Kişisel Bilgiler</h2>
+    <label for="ad">Adınız:</label>
+    <input type="text" id="ad" required><br>
+
+    <label for="soyad">Soyadınız:</label>
+    <input type="text" id="soyad" required><br>
+
+    <label for="dogumTarihi">Doğum Tarihini:</label>
+    <input type="date" id="dogumTarihi" required><br>
+
+    <label for="mail">Mail Adresiniz:</label>
+    <input type="email" id="mail" required><br>
+
+    <label for="telefon">Telefon:</label>
+    <input type="tel" id="telefon" required><br>
+
+    <h2>Sipariş Bilgileri</h2>
+    <label for="tisortRengi">Tişört Rengi:</label>
+    <input type="text" id="tisortRengi" required><br>
+
+    <label for="yaziRengi">Yazı Rengi:</label>
+    <input type="text" id="yaziRengi" required><br>
+
+    <label for="yazi">Tişört Üzerinde Yazacak Yazı:</label>
+    <input type="text" id="yazi" required><br>
+
+    <label for="adet">Tişört Adeti:</label>
+    <input type="number" id="adet" required><br>
+
+    <label for="beden">Beden Seçiniz:</label>
+    <select id="beden" required>
+      <option value="S">S</option>
+      <option value="M">M</option>
+      <option value="L">L</option>
+      <option value="XL">XL</option>
+    </select><br>
+
+    <h2>Teslimat Bilgileri</h2>
+    <label for="adres">Adres:</label>
+    <textarea id="adres" required></textarea><br>
+
+    <label for="teslimTarihi">Teslim Tarihi İçin Bir Aralık Seçiniz:</label>
+    <input type="text" id="teslimTarihi" required><br>
+
+    <h2>Ödeme Bilgileri</h2>
+    <label for="odemeAdSoyad">Ad Soyad:</label>
+    <input type="text" id="odemeAdSoyad" required><br>
+
+    <label for="kartNumarasi">Kart Numarası:</label>
+    <input type="text" id="kartNumarasi" required><br>
+
+    <label for="sonKullanmaTarihi">Son Kullanma Tarihi:</label>
+    <input type="text" id="sonKullanmaTarihi" required><br>
+
+    <label for="cvv">CVV:</label>
+    <input type="text" id="cvv" required><br>
+
+    <button type="button" onclick="onayla()">Onayla</button>
+  </form>
+
+  <div id="tabloAlani"></div>
+
+  <script src="script.js"></script>
+  <script>
+function onayla() {
+  // Form verilerini al
+  var ad = document.getElementById('ad').value;
+  var soyad = document.getElementById('soyad').value;
+  var dogumTarihi = document.getElementById('dogumTarihi').value;
+  var mail = document.getElementById('mail').value;
+  var telefon = document.getElementById('telefon').value;
+  var tisortRengi = document.getElementById('tisortRengi').value;
+  var yaziRengi = document.getElementById('yaziRengi').value;
+  var yazi = document.getElementById('yazi').value;
+  var adet = document.getElementById('adet').value;
+  var beden = document.getElementById('beden').value;
+  var adres = document.getElementById('adres').value;
+  var teslimTarihi = document.getElementById('teslimTarihi').value;
+  var odemeAdSoyad = document.getElementById('odemeAdSoyad').value;
+  var kartNumarasi = document.getElementById('kartNumarasi').value;
+  var sonKullanmaTarihi = document.getElementById('sonKullanmaTarihi').value;
+  var cvv = document.getElementById('cvv').value;
+
+  // Stripe ile ödeme işlemlerini gerçekleştir
+  // Buraya Stripe ödeme işlemleri için gerekli kodları ekleyin
+
+  // Tabloyu oluştur
+  var tablo = "<h2>Sipariş Detayları</h2>";
+  tablo += "<table border='1'>";
+  tablo += "<tr><td>Adı:</td><td>" + ad + "</td></tr>";
+  tablo += "<tr><td>Soyadı:</td><td>" + soyad + "</td></tr>";
+  tablo += "<tr><td>Doğum Tarihi:</td><td>" + dogumTarihi + "</td></tr>";
+  tablo += "<tr><td>Mail Adresi:</td><td>" + mail + "</td></tr>";
+  tablo += "<tr><td>Telefon:</td><td>" + telefon + "</td></tr>";
+  tablo += "<tr><td>Tişört Rengi:</td><td>" + tisortRengi + "</td></tr>";
+  tablo += "<tr><td>Yazı Rengi:</td><td>" + yaziRengi + "</td></tr>";
+  tablo += "<tr><td>Yazı:</td><td>" + yazi + "</td></tr>";
+  tablo += "<tr><td>Tişört Adeti:</td><td>" + adet + "</td></tr>";
+  tablo += "<tr><td>Beden:</td><td>" + beden + "</td></tr>";
+  tablo += "<tr><td>Adres:</td><td>" + adres + "</td></tr>";
+  tablo += "<tr><td>Teslim Tarihi:</td><td>" + teslimTarihi + "</td></tr>";
+  tablo += "<tr><td>Ödeme Ad Soyad:</td><td>" + odemeAdSoyad + "</td></tr>";
+  tablo += "<tr><td>Kart Numarası:</td><td>" + kartNumarasi + "</td></tr>";
+  tablo += "<tr><td>Son Kullanma Tarihi:</td><td>" + sonKullanmaTarihi + "</td></tr>";
+  tablo += "<tr><td>CVV:</td><td>" + cvv + "</td></tr>";
+  tablo += "</table>";
+
+  // Tabloyu ekrana yazdır
+  document.getElementById('tabloAlani').innerHTML = tablo;
+}
+    
+
+  </script>
+
+</body>
+</html>
